@@ -7,22 +7,25 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using mofoluwasho_yawning.Data;
 using mofoluwasho_yawning.Models;
+using mofoluwasho_yawning.Services;
 
 namespace mofoluwasho_yawning.Controllers
 {
     public class UserModels1Controller : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly User _userQuery;
 
-        public UserModels1Controller(ApplicationDbContext context)  
+        public UserModels1Controller(ApplicationDbContext context, User userQuery)  
         {
             _context = context;
+            _userQuery = userQuery;
         }
 
         // GET: UserModels1
         public async Task<IActionResult> Index()
         {
-            return View(await _context.UserModel.ToListAsync());
+            return View(await _userQuery.GetAll());
         }
 
         // GET: UserModels1/Details/5
