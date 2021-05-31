@@ -26,8 +26,15 @@ using mofoluwasho_yawning.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\USER\Desktop\project samples\mofoluwasho yawning\mofoluwasho yawning\Views\_ViewImports.cshtml"
+using mofoluwasho_yawning.Data;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3f1329ebc94b5f45972228bd9e6910fe742d4218", @"/Views/UserModels/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"de92293f23219d60d2b525c4f4e7ab7e23af5d77", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ded1143cd5a4d31d1f2894107b7d6851b7b7a937", @"/Views/_ViewImports.cshtml")]
     public class Views_UserModels_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<mofoluwasho_yawning.Models.UserModel>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Create", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -68,7 +75,7 @@ using mofoluwasho_yawning.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<h1>Index</h1>\r\n\r\n<p>\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3f1329ebc94b5f45972228bd9e6910fe742d42184720", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3f1329ebc94b5f45972228bd9e6910fe742d42184937", async() => {
                 WriteLiteral("Create New");
             }
             );
@@ -252,7 +259,7 @@ using mofoluwasho_yawning.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3f1329ebc94b5f45972228bd9e6910fe742d421813300", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3f1329ebc94b5f45972228bd9e6910fe742d421813517", async() => {
                 WriteLiteral("Edit");
             }
             );
@@ -283,7 +290,7 @@ using mofoluwasho_yawning.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral(" |\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3f1329ebc94b5f45972228bd9e6910fe742d421815498", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3f1329ebc94b5f45972228bd9e6910fe742d421815715", async() => {
                 WriteLiteral("Details");
             }
             );
@@ -314,7 +321,7 @@ using mofoluwasho_yawning.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral(" |\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3f1329ebc94b5f45972228bd9e6910fe742d421817702", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3f1329ebc94b5f45972228bd9e6910fe742d421817919", async() => {
                 WriteLiteral("Delete");
             }
             );

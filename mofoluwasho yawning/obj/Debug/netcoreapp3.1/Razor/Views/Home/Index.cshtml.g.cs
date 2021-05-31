@@ -26,8 +26,15 @@ using mofoluwasho_yawning.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\USER\Desktop\project samples\mofoluwasho yawning\mofoluwasho yawning\Views\_ViewImports.cshtml"
+using mofoluwasho_yawning.Data;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"99464617055fdb505bb0bb7fd91f9b14f7b0d030", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"de92293f23219d60d2b525c4f4e7ab7e23af5d77", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ded1143cd5a4d31d1f2894107b7d6851b7b7a937", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

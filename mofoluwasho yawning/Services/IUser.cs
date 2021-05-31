@@ -9,6 +9,8 @@ namespace mofoluwasho_yawning.Services
     public interface IUser
     {
         Task <List<UserModel>> GetAll();
+        Task Delete(int id);
+        Task SaveChanges();
 
     }
 }

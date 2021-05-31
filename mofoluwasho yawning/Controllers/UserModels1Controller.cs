@@ -14,9 +14,9 @@ namespace mofoluwasho_yawning.Controllers
     public class UserModels1Controller : Controller
     {
         private readonly ApplicationDbContext _context;
-        private readonly User _userQuery;
+        private readonly IUser _userQuery;
 
-        public UserModels1Controller(ApplicationDbContext context, User userQuery)  
+        public UserModels1Controller(ApplicationDbContext context, IUser userQuery)  
         {
             _context = context;
             _userQuery = userQuery;
@@ -143,9 +143,7 @@ namespace mofoluwasho_yawning.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var userModel = await _context.UserModel.FindAsync(id);
-            _context.UserModel.Remove(userModel);
-            await _context.SaveChangesAsync();
+            await _userQuery.Delete(id);
             return RedirectToAction(nameof(Index));
         }
 
