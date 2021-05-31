@@ -1,0 +1,216 @@
+﻿@model IEnumerable<mofoluwasho_yawning.Models.UserModel>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+@if (User.Identity.IsAuthenticated is true)
+{
+
+    @if (User.Identity.Name.Contains("abivictoria02@gmail.com"))
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LastName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PhoneNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EmailAddress)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AlternativeNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NIN)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BVN)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.MyAddress)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EmergencyContactName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EmergencyContactNumber)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PhoneNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EmailAddress)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AlternativeNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NIN)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BVN)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MyAddress)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EmergencyContactName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EmergencyContactNumber)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.UserId">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.UserId">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.UserId">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    }
+    else if (User.Identity.Name.Contains("sethmichael1.sm@gmail.com"))
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LastName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PhoneNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EmailAddress)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AlternativeNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NIN)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BVN)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.MyAddress)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EmergencyContactName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EmergencyContactNumber)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PhoneNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EmailAddress)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AlternativeNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NIN)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BVN)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MyAddress)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EmergencyContactName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EmergencyContactNumber)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.UserId">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.UserId">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.UserId">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    }
+}
+else
+{
+    <a>You are not Authenticated!!!</a>
+    <ul class="navbar-nav">
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
+            </li>
+            <li class="nav-item">
+                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                </form>
+            </li>
+        }
+        else
+        {
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+            </li>
+        }
+    </ul>
+}
+
+
+
+
+
+
