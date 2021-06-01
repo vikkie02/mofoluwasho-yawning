@@ -36,6 +36,7 @@ namespace mofoluwasho_yawning
             services.AddControllersWithViews();            
             services.AddRazorPages();
             services.AddScoped<IUser, UserService>();
+            services.AddScoped<IInterface2, Practice>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,7 +65,7 @@ namespace mofoluwasho_yawning
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=UserModels1}/{action=Index}/{id?}");
+                    pattern: "{controller=UserModels}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

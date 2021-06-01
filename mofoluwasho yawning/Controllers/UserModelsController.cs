@@ -7,22 +7,27 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using mofoluwasho_yawning.Data;
 using mofoluwasho_yawning.Models;
+using mofoluwasho_yawning.Services;
 
 namespace mofoluwasho_yawning.Controllers
 {
     public class UserModelsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IInterface2 _interfaceQuery;
+        
 
-        public UserModelsController(ApplicationDbContext context)
+        public UserModelsController(ApplicationDbContext context, IInterface2 InterfaceQuery)
         {
             _context = context;
+            _interfaceQuery = InterfaceQuery;
+
         }
 
         // GET: UserModels
         public async Task<IActionResult> Index()
         {
-            return View(await _context.UserModel.ToListAsync());
+            return View(await _interfaceQuery.GetAll());
         }
 
         // GET: UserModels/Details/5
@@ -32,8 +37,7 @@ namespace mofoluwasho_yawning.Controllers
             {
                 return NotFound();
             }
-
-            var userModel = await _context.UserModel.FirstOrDefaultAsync(m => m.UserId == id);
+            var userModel = await _interfaceQuery.GetById((int)id);
             if (userModel == null)
             {
                 return NotFound();
@@ -53,12 +57,11 @@ namespace mofoluwasho_yawning.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("UserId,FirstName,LastName,PhoneNumber,EmailAddress,AlternativeNumber,NIN,BVN,MyAddress,EmergencyContactName,EmergencyContactNumber")] UserModel userModel)
+        public async Task<IActionResult> Create(UserModel userModel)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(userModel);
-                await _context.SaveChangesAsync();
+                await _interfaceQuery.Add(userModel);
                 return RedirectToAction(nameof(Index));
             }
             return View(userModel);
@@ -72,7 +75,7 @@ namespace mofoluwasho_yawning.Controllers
                 return NotFound();
             }
 
-            var userModel = await _context.UserModel.FindAsync(id);
+            var userModel = await _interfaceQuery.GetById((int)id);
             if (userModel == null)
             {
                 return NotFound();
@@ -94,22 +97,7 @@ namespace mofoluwasho_yawning.Controllers
 
             if (ModelState.IsValid)
             {
-                try
-                {
-                    _context.Update(userModel);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!UserModelExists(userModel.UserId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+                await _interfaceQuery.Edit(userModel);
                 return RedirectToAction(nameof(Index));
             }
             return View(userModel);
@@ -118,35 +106,11 @@ namespace mofoluwasho_yawning.Controllers
         // GET: UserModels/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var userModel = await _context.UserModel
-                .FirstOrDefaultAsync(m => m.UserId == id);
-            if (userModel == null)
-            {
-                return NotFound();
-            }
-
-            return View(userModel);
-        }
-
-        // POST: UserModels/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var userModel = await _context.UserModel.FindAsync(id);
-            _context.UserModel.Remove(userModel);
+            UserModel del = await _context.UserModel.FindAsync(id);
+            _context.UserModel.Remove(del);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool UserModelExists(int id)
-        {
-            return _context.UserModel.Any(e => e.UserId == id);
-        }
     }
 }

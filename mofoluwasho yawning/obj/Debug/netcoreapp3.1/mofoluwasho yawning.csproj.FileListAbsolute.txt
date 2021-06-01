@@ -60,7 +60,6 @@ C:\Users\USER\Desktop\project samples\mofoluwasho yawning\mofoluwasho yawning\bi
 C:\Users\USER\Desktop\project samples\mofoluwasho yawning\mofoluwasho yawning\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\USER\Desktop\project samples\mofoluwasho yawning\mofoluwasho yawning\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\USER\Desktop\project samples\mofoluwasho yawning\mofoluwasho yawning\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\USER\Desktop\project samples\mofoluwasho yawning\mofoluwasho yawning\obj\Debug\netcoreapp3.1\mofoluwasho yawning.csprojAssemblyReference.cache
 C:\Users\USER\Desktop\project samples\mofoluwasho yawning\mofoluwasho yawning\obj\Debug\netcoreapp3.1\mofoluwasho yawning.AssemblyInfoInputs.cache
 C:\Users\USER\Desktop\project samples\mofoluwasho yawning\mofoluwasho yawning\obj\Debug\netcoreapp3.1\mofoluwasho yawning.AssemblyInfo.cs
 C:\Users\USER\Desktop\project samples\mofoluwasho yawning\mofoluwasho yawning\obj\Debug\netcoreapp3.1\mofoluwasho yawning.csproj.CoreCompileInputs.cache
@@ -210,3 +209,4 @@ C:\Users\USER\Desktop\project samples\mofoluwasho yawning\mofoluwasho yawning\ob
 C:\Users\USER\Desktop\project samples\mofoluwasho yawning\mofoluwasho yawning\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Error.cshtml.g.cs
 C:\Users\USER\Desktop\project samples\mofoluwasho yawning\mofoluwasho yawning\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\USER\Desktop\project samples\mofoluwasho yawning\mofoluwasho yawning\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
+C:\Users\USER\Desktop\project samples\mofoluwasho yawning\mofoluwasho yawning\obj\Debug\netcoreapp3.1\mofoluwasho yawning.csprojAssemblyReference.cache

@@ -31,5 +31,11 @@ namespace mofoluwasho_yawning.Services
         {
             await _context.SaveChangesAsync();
         }
+
+        public async Task Update(UserModel userModel)
+        {
+            _context.Update(userModel);
+            await SaveChanges();
+        }
     }
 }

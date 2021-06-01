@@ -99,22 +99,7 @@ namespace mofoluwasho_yawning.Controllers
 
             if (ModelState.IsValid)
             {
-                try
-                {
-                    _context.Update(userModel);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!UserModelExists(userModel.UserId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+                await _userQuery.Update(userModel);
                 return RedirectToAction(nameof(Index));
             }
             return View(userModel);
